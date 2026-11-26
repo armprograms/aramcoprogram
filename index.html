@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>دليل برنامج التدريب الصيفي | Summer Training Program Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #0F3D2E;
+      --primary-hover: #195C46;
+      --primary-soft: rgba(15, 61, 46, 0.08);
+      --accent-gold: #B8860B;
+      --bg-body: #F5F7F6;
+      --bg-card: #FFFFFF;
+      --bg-subtle: #EDF2EF;
+      --text-main: #12261F;
+      --text-secondary: #3D544C;
+      --text-muted: #5C736B;
+      --border-color: #D6E2DC;
+      --alert-bg: #FFFBEB;
+      --alert-border: #D97706;
+      --alert-text: #78350F;
+      --danger-bg: #FEF2F2;
+      --danger-border: #DC2626;
+      --danger-text: #7F1D1D;
+      --shadow-sm: 0 2px 10px rgba(15, 61, 46, 0.04);
+      --shadow-md: 0 10px 30px rgba(15, 61, 46, 0.08);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+    }
+
+    [data-theme="dark"] {
+      --primary: #1E6B52;
+      --primary-hover: #288567;
+      --primary-soft: rgba(30, 107, 82, 0.22);
+      --accent-gold: #E2B33C;
+      --bg-body: #071410;
+      --bg-card: #0D211B;
+      --bg-subtle: #132C24;
+      --text-main: #E6F2ED;
+      --text-secondary: #BDD4CB;
+      --text-muted: #8FAEA2;
+      --border-color: #1F3D33;
+      --alert-bg: rgba(217, 119, 6, 0.14);
+      --alert-border: #F59E0B;
+      --alert-text: #FDE68A;
+      --danger-bg: rgba(220, 38, 38, 0.14);
+      --danger-border: #F87171;
+      --danger-text: #FECACA;
+      --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.35);
+      --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.5);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'IBM Plex Sans Arabic', 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.85;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    html[dir="ltr"] body {
+      font-family: 'Plus Jakarta Sans', 'IBM Plex Sans Arabic', sans-serif;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 22px;
+    }
+
+    /* Header */
+    header {
+      background-color: var(--bg-card);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-logo {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+    }
+
+    .brand-titles {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-title-primary {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.3;
+    }
+
+    .brand-title-secondary {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.2px;
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .control-btn {
+      background-color: var(--bg-subtle);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      padding: 9px 15px;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.2s ease;
+    }
+
+    .control-btn:hover {
+      background-color: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+    }
+
+    /* Hero & Status Banner */
+    .hero {
+      padding: 44px 0 28px;
+    }
+
+    .status-banner {
+      background-color: var(--alert-bg);
+      border: 1px solid var(--alert-border);
+      color: var(--alert-text);
+      padding: 16px 22px;
+      border-radius: var(--radius-md);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.96rem;
+      font-weight: 600;
+    }
+
+    /* Countdown Card */
+    .countdown-card {
+      background: linear-gradient(135deg, #0F3D2E 0%, #175440 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 34px 28px;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .countdown-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .countdown-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .countdown-subtitle {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      margin-bottom: 24px;
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(75px, 120px));
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .time-box {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 14px;
+      padding: 16px 10px;
+      backdrop-filter: blur(6px);
+    }
+
+    .time-value {
+      font-size: 1.9rem;
+      font-weight: 700;
+      display: block;
+      line-height: 1.2;
+    }
+
+    .time-label {
+      font-size: 0.82rem;
+      opacity: 0.9;
+      margin-top: 4px;
+      display: block;
+    }
+
+    /* Program Idea Box */
+    .idea-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-inline-start: 5px solid var(--primary);
+      border-radius: var(--radius-lg);
+      padding: 28px 30px;
+      margin-bottom: 30px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .idea-card h2 {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    [data-theme="dark"] .idea-card h2 {
+      color: #5CD6AD;
+    }
+
+    .idea-card p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+
+    /* Quick Stats */
+    .quick-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-bottom: 38px;
+    }
+
+    .stat-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .stat-value {
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .stat-note {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+
+    /* Stage Navigation Tabs */
+    .stage-nav {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 34px;
+      flex-wrap: wrap;
+      background-color: var(--bg-card);
+      padding: 12px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .stage-tab {
+      flex: 1;
+      min-width: 180px;
+      text-align: center;
+      padding: 14px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.98rem;
+      color: var(--text-main);
+      background-color: var(--bg-subtle);
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    .stage-tab:hover,
+    .stage-tab.active {
+      background-color: var(--primary);
+      color: #FFFFFF;
+    }
+
+    /* Sections */
+    .stage-section {
+      margin-bottom: 54px;
+      scroll-margin-top: 96px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    .section-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background-color: var(--primary);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    /* Cards & Accordions */
+    .card-box {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .card-box h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: var(--text-main);
+    }
+
+    .accordion-item {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .accordion-header {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 18px 22px;
+      text-align: start;
+      font-family: inherit;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text-main);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      transition: background-color 0.2s ease;
+    }
+
+    .accordion-header:hover {
+      background-color: var(--bg-subtle);
+    }
+
+    .accordion-icon {
+      font-size: 1.2rem;
+      color: var(--primary);
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+
+    [data-theme="dark"] .accordion-icon {
+      color: #5CD6AD;
+    }
+
+    .accordion-item.open .accordion-icon {
+      transform: rotate(45deg);
+    }
+
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.32s ease;
+    }
+
+    .accordion-content {
+      padding: 0 22px 20px;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border-color);
+      padding-top: 16px;
+    }
+
+    .accordion-content ul,
+    .clean-list {
+      padding-inline-start: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* Alert & Notice Boxes */
+    .notice-danger {
+      background-color: var(--danger-bg);
+      border: 1px solid var(--danger-border);
+      color: var(--danger-text);
+      border-radius: var(--radius-md);
+      padding: 22px 24px;
+      margin-bottom: 22px;
+    }
+
+    .notice-danger h4,
+    .notice-warning h4 {
+      font-size: 1.08rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .notice-warning {
+      background-color: var(--alert-bg);
+      border: 1px solid var(--alert-border);
+      color: var(--alert-text);
+      border-radius: var(--radius-md);
+      padding: 22px 24px;
+      margin-bottom: 22px;
+    }
+
+    /* Two-column Tracks */
+    .tracks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .track-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-top: 4px solid var(--primary);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .track-tag {
+      display: inline-block;
+      background-color: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    [data-theme="dark"] .track-tag {
+      color: #6EE7B7;
+    }
+
+    /* Video Player Box */
+    .video-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-bottom: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .video-wrapper {
+      margin-top: 14px;
+      border-radius: 14px;
+      overflow: hidden;
+      background-color: #000;
+      border: 1px solid var(--border-color);
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      max-height: 460px;
+      display: block;
+    }
+
+    /* Steps Timeline */
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background-color: var(--bg-subtle);
+      padding: 14px 18px;
+      border-radius: 12px;
+    }
+
+    .step-badge {
+      background-color: var(--primary);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 4px 12px;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    /* Presentation Questions */
+    .q-pair {
+      background-color: var(--bg-subtle);
+      padding: 14px 18px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+
+    .q-ar {
+      font-weight: 700;
+      color: var(--text-main);
+      display: block;
+    }
+
+    .q-en {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      direction: ltr;
+      text-align: left;
+      display: block;
+      margin-top: 4px;
+    }
+
+    /* Banks Grid */
+    .banks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .bank-btn {
+      background-color: var(--bg-subtle);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      padding: 14px 16px;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+    }
+
+    .bank-btn:hover {
+      background-color: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* Embedded Modal for Banks */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 16, 12, 0.78);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 1000;
+      backdrop-filter: blur(4px);
+      overflow-y: auto;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-box {
+      background-color: var(--bg-card);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 780px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      margin: auto;
+    }
+
+    .modal-header {
+      padding: 16px 22px;
+      background-color: var(--primary);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .modal-close {
+      background: rgba(255, 255, 255, 0.18);
+      border: none;
+      color: #FFFFFF;
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .modal-body {
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .modal-iframe-wrap {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+      border: 1px solid var(--border-color);
+    }
+
+    .modal-iframe-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .modal-steps {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-color);
+      padding: 14px 18px;
+      border-radius: 12px;
+      color: var(--text-main);
+      font-size: 0.94rem;
+      line-height: 1.8;
+    }
+
+    .modal-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .modal-yt-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--primary);
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .modal-yt-btn:hover {
+      background-color: var(--primary-hover);
+    }
+
+    /* Community & Footer */
+    .community-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 34px 28px;
+      text-align: center;
+      margin-bottom: 36px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .community-card p {
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: var(--text-main);
+      max-width: 680px;
+      margin: 0 auto 24px;
+    }
+
+    .community-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .tg-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 22px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+
+    .tg-btn-primary {
+      background-color: var(--primary);
+      color: #FFFFFF;
+    }
+
+    .tg-btn-primary:hover {
+      background-color: var(--primary-hover);
+    }
+
+    .tg-btn-outline {
+      background-color: var(--bg-subtle);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .tg-btn-outline:hover {
+      border-color: var(--primary);
+      background-color: var(--primary-soft);
+    }
+
+    footer {
+      background-color: var(--bg-card);
+      border-top: 1px solid var(--border-color);
+      padding: 28px 20px;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+    }
+
+    footer .copyright {
+      margin-top: 8px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    @media (max-width: 640px) {
+      .countdown-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .brand-title-primary {
+        font-size: 1.08rem;
+      }
+      .brand-title-secondary {
+        font-size: 0.78rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <div class="brand">
+        <!-- Formal Geometric Logo SVG -->
+        <svg class="brand-logo" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Logo">
+          <rect width="64" height="64" rx="16" fill="#0F3D2E"/>
+          <path d="M18 42L32 18L46 42H38.5L32 30.5L25.5 42H18Z" fill="#FFFFFF"/>
+          <circle cx="32" cy="45" r="3.5" fill="#E2B33C"/>
+        </svg>
+        <div class="brand-titles">
+          <span class="brand-title-primary" id="brandMain">دليل برنامج التدريب الصيفي</span>
+          <span class="brand-title-secondary" id="brandSub">Summer Training Program Guide</span>
+        </div>
+      </div>
+
+      <div class="header-controls">
+        <button class="control-btn" id="langToggle" type="button">
+          <span>🌐</span>
+          <span id="langLabel">English</span>
+        </button>
+        <button class="control-btn" id="themeToggle" type="button">
+          <span id="themeIcon">🌙</span>
+          <span id="themeLabel">الوضع الداكن</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="status-banner">
+        <span>📢</span>
+        <span data-ar="تنويه مهم: لم يتم الإعلان الرسمي عن برنامج التدريب الصيفي بعد، ولم يُفتح باب التسجيل حتى الآن."
+              data-en="Important Notice: The Summer Training Program has not been officially announced yet, and registration is not open yet.">
+          تنويه مهم: لم يتم الإعلان الرسمي عن برنامج التدريب الصيفي بعد، ولم يُفتح باب التسجيل حتى الآن.
+        </span>
+      </div>
+
+      <!-- Countdown -->
+      <div class="countdown-card">
+        <div class="countdown-badge" data-ar="العد التنازلي للتسجيل" data-en="Registration Countdown">
+          العد التنازلي للتسجيل
+        </div>
+        <h1 class="countdown-title" data-ar="الموعد المتوقع لفتح التسجيل في برنامجي التدريب الصيفي وطموح"
+            data-en="Expected Registration Opening for Summer Training & Tamooh Programs">
+          الموعد المتوقع لفتح التسجيل في برنامجي التدريب الصيفي وطموح
+        </h1>
+        <p class="countdown-subtitle" data-ar="التاريخ المتوقع: 28 فبراير 2027م"
+           data-en="Expected Date: February 28, 2027">
+          التاريخ المتوقع: 28 فبراير 2027م
+        </p>
+
+        <div class="countdown-grid">
+          <div class="time-box">
+            <span class="time-value" id="cd-days">00</span>
+            <span class="time-label" data-ar="يوم" data-en="Days">يوم</span>
+          </div>
+          <div class="time-box">
+            <span class="time-value" id="cd-hours">00</span>
+            <span class="time-label" data-ar="ساعة" data-en="Hours">ساعة</span>
+          </div>
+          <div class="time-box">
+            <span class="time-value" id="cd-minutes">00</span>
+            <span class="time-label" data-ar="دقيقة" data-en="Minutes">دقيقة</span>
+          </div>
+          <div class="time-box">
+            <span class="time-value" id="cd-seconds">00</span>
+            <span class="time-label" data-ar="ثانية" data-en="Seconds">ثانية</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Program Idea -->
+      <div class="idea-card">
+        <h2>
+          <span>🎯</span>
+          <span data-ar="فكرة البرنامج والهدف منه" data-en="Program Concept & Objective">فكرة البرنامج والهدف منه</span>
+        </h2>
+        <p data-ar="يهدف برنامج التدريب الصيفي إلى تطوير الطلاب وتأهيلهم للحياة المهنية والمستقبلية، ويركّز البرنامج بالكامل على اللغة الإنجليزية ولا يوجد فيه أي تدريس باللغة العربية."
+           data-en="The Summer Training Program aims to develop students and prepare them for professional and future life. The program focuses entirely on the English language, with no Arabic instruction.">
+          يهدف برنامج التدريب الصيفي إلى تطوير الطلاب وتأهيلهم للحياة المهنية والمستقبلية، ويركّز البرنامج بالكامل على اللغة الإنجليزية ولا يوجد فيه أي تدريس باللغة العربية.
+        </p>
+      </div>
+
+      <!-- Quick Info Cards -->
+      <div class="quick-stats">
+        <div class="stat-card">
+          <div class="stat-label" data-ar="🗓 بداية البرنامج (وفق التقويم المعلن)" data-en="🗓 Program Start Date">
+            🗓 بداية البرنامج (وفق التقويم المعلن)
+          </div>
+          <div class="stat-value" data-ar="5 صفر 1448هـ — 19 يوليو 2026م" data-en="5 Safar 1448H — July 19, 2026">
+            5 صفر 1448هـ — 19 يوليو 2026م
+          </div>
+          <div class="stat-note" data-ar="للطلبة المرشحين المقبولين" data-en="For nominated accepted students">
+            للطلبة المرشحين المقبولين
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-label" data-ar="⏳ المدة وأوقات الدوام" data-en="⏳ Duration & Daily Hours">
+            ⏳ المدة وأوقات الدوام
+          </div>
+          <div class="stat-value" data-ar="3 أسابيع (8:00 ص – 12:00 م)" data-en="3 Weeks (8:00 AM – 12:00 PM)">
+            3 أسابيع (8:00 ص – 12:00 م)
+          </div>
+          <div class="stat-note" data-ar="دراسة عن بُعد عبر منصة بلاك بورد" data-en="Online via Blackboard platform">
+            دراسة عن بُعد عبر منصة بلاك بورد
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-label" data-ar="💰 المكافأة المالية" data-en="💰 Financial Stipend">
+            💰 المكافأة المالية
+          </div>
+          <div class="stat-value" data-ar="1500 ريال سعودي" data-en="1,500 SAR">
+            1500 ريال سعودي
+          </div>
+          <div class="stat-note" data-ar="بشرط الالتزام بالحضور وإتمام الإقرار" data-en="Subject to attendance & declaration completion">
+            بشرط الالتزام بالحضور وإتمام الإقرار
+          </div>
+        </div>
+      </div>
+
+      <!-- Stage Navigation -->
+      <nav class="stage-nav" aria-label="Program Stages">
+        <a href="#stage-start" class="stage-tab" data-ar="1. بداية البرنامج" data-en="1. Start of Program">1. بداية البرنامج</a>
+        <a href="#stage-during" class="stage-tab" data-ar="2. خلال البرنامج" data-en="2. During Program">2. خلال البرنامج</a>
+        <a href="#stage-end" class="stage-tab" data-ar="3. نهاية البرنامج" data-en="3. End of Program">3. نهاية البرنامج</a>
+      </nav>
+    </section>
+
+    <!-- STAGE 1: START OF PROGRAM -->
+    <section id="stage-start" class="stage-section">
+      <div class="section-header">
+        <div class="section-num">1</div>
+        <h2 class="section-title" data-ar="بداية البرنامج (القبول، الفصول، والإقرار)" data-en="Start of Program (Admission, Classes & Declaration)">
+          بداية البرنامج (القبول، الفصول، والإقرار)
+        </h2>
+      </div>
+
+      <!-- Mandatory Declaration Alert -->
+      <div class="notice-danger">
+        <h4 data-ar="📢 تنويه هام جداً بشأن «الإقرار»" data-en="📢 Very Important Notice Regarding the Declaration">
+          📢 تنويه هام جداً بشأن «الإقرار»
+        </h4>
+        <ul class="clean-list">
+          <li data-ar="يأتي نموذج الإقرار في بداية البرنامج، وهو إلزامي؛ فأي طالب لم يقم بتعبئته والموافقة عليه لن تُصرف له المكافأة المالية ولن تصدر له شهادة إتمام البرنامج."
+              data-en="The declaration form appears at the start of the program and is mandatory; failure to complete it results in forfeiting both the stipend and the completion certificate.">
+            يأتي نموذج الإقرار في بداية البرنامج، وهو إلزامي؛ فأي طالب لم يقم بتعبئته والموافقة عليه لن تُصرف له المكافأة المالية ولن تصدر له شهادة إتمام البرنامج.
+          </li>
+          <li data-ar="تُتاح أمامك فرصتان فقط لتعبئة الإقرار أو تعديله: الفرصة الأولى في بداية البرنامج، والفرصة الثانية والأخيرة في نهاية البرنامج."
+              data-en="You have only two opportunities to complete or edit the declaration: once at the start of the program, and a final opportunity at the end of the program.">
+            تُتاح أمامك فرصتان فقط لتعبئة الإقرار أو تعديله: الفرصة الأولى في بداية البرنامج، والفرصة الثانية والأخيرة في نهاية البرنامج.
+          </li>
+          <li data-ar="من أتمّ تقديم الإقرار في بداية البرنامج بشكل صحيح لا يلزمه ولا يمكنه تعبئته مرة أخرى؛ فالرابط المتاح في نهاية البرنامج مخصص فقط لمن لم يرفعه سابقاً أو احتاج لتعديله."
+              data-en="Anyone who submitted the declaration at the start cannot and does not need to submit it again; the end-of-program link is only for those who missed or need to edit it.">
+            من أتمّ تقديم الإقرار في بداية البرنامج بشكل صحيح لا يلزمه ولا يمكنه تعبئته مرة أخرى؛ فالرابط المتاح في نهاية البرنامج مخصص فقط لمن لم يرفعه سابقاً أو احتاج لتعديله.
+          </li>
+        </ul>
+      </div>
+
+      <div class="accordion-item open">
+        <button class="accordion-header" type="button">
+          <span data-ar="هل تم الإعلان عن البرنامج أو فتح التسجيل؟ وهل توجد نسبة قبول معينة؟"
+                data-en="Has registration opened yet? Is there a specific GPA requirement?">
+            هل تم الإعلان عن البرنامج أو فتح التسجيل؟ وهل توجد نسبة قبول معينة؟
+          </span>
+          <span class="accordion-icon">+</span>
+        </button>
+        <div class="accordion-body" style="max-height: 500px;">
+          <div class="accordion-content">
+            <ul>
+              <li data-ar="لم يتم الإعلان الرسمي عن البرنامج ولا عن فتح التسجيل حتى الآن."
+                  data-en="Neither the program nor registration has been officially announced yet.">
+                لم يتم الإعلان الرسمي عن البرنامج ولا عن فتح التسجيل حتى الآن.
+              </li>
+              <li data-ar="لا توجد نسبة قبول معينة؛ القبول يتم بشكل عشوائي."
+                  data-en="There is no specific acceptance percentage; selection is randomized.">
+                لا توجد نسبة قبول معينة؛ القبول يتم بشكل عشوائي.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header" type="button">
+          <span data-ar="متى تصل رسائل القبول؟" data-en="When are acceptance emails sent?">
+            متى تصل رسائل القبول؟
+          </span>
+          <span class="accordion-icon">+</span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <p data-ar="تصل رسائل القبول عادةً بعد إجازة عيد الأضحى بنحو شهر تقريباً."
+               data-en="Acceptance emails usually arrive about one month after Eid Al-Adha.">
+              تصل رسائل القبول عادةً بعد إجازة عيد الأضحى بنحو شهر تقريباً.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header" type="button">
+          <span data-ar="ماذا يحدث بعد القبول وكيف يتم تقسيم الفصول الدراسية؟"
+                data-en="What happens after acceptance and how are classes divided?">
+            ماذا يحدث بعد القبول وكيف يتم تقسيم الفصول الدراسية؟
+          </span>
+          <span class="accordion-icon">+</span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <ul>
+              <li data-ar="في حال قبولك، ستصلك رسالة عبر البريد الإلكتروني تتضمن بيانات حسابك في منصة البلاك بورد (Blackboard)."
+                  data-en="Once accepted, you will receive an email containing your Blackboard account credentials.">
+                في حال قبولك، ستصلك رسالة عبر البريد الإلكتروني تتضمن بيانات حسابك في منصة البلاك بورد (Blackboard).
+              </li>
+              <li data-ar="يُعقد اختباران لتحديد المستوى: الأول قبل بداية البرنامج، والثاني بعد نهايته، ودرجة الاختبار لا تسبب أي طرد إطلاقاً."
+                  data-en="There are two placement tests: one before the program starts and one after it ends. Test scores never cause dismissal.">
+                يُعقد اختباران لتحديد المستوى: الأول قبل بداية البرنامج، والثاني بعد نهايته، ودرجة الاختبار لا تسبب أي طرد إطلاقاً.
+              </li>
+              <li data-ar="مدة البرنامج 3 أسابيع، ويُقسّم الطلاب إلى فصول دراسية يضم كل فصل قرابة 26 طالباً أو طالبة."
+                  data-en="The program lasts 3 weeks, and students are divided into classes of around 26 students each.">
+                مدة البرنامج 3 أسابيع، ويُقسّم الطلاب إلى فصول دراسية يضم كل فصل قرابة 26 طالباً أو طالبة.
+              </li>
+              <li data-ar="تُفصل فصول الطالبات عن فصول الطلاب بشكل كامل، وقد يتولى تدريس الطالبات معلم أو معلمة، وكذلك الأمر بالنسبة للطلاب."
+                  data-en="Female and male classes are completely separate, and either group may be taught by a male or female instructor.">
+                تُفصل فصول الطالبات عن فصول الطلاب بشكل كامل، وقد يتولى تدريس الطالبات معلم أو معلمة، وكذلك الأمر بالنسبة للطلاب.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STAGE 2: DURING PROGRAM -->
+    <section id="stage-during" class="stage-section">
+      <div class="section-header">
+        <div class="section-num">2</div>
+        <h2 class="section-title" data-ar="خلال البرنامج (المسارات، الحضور، والواجبات)" data-en="During Program (Tracks, Attendance & Assignments)">
+          خلال البرنامج (المسارات، الحضور، والواجبات)
+        </h2>
+      </div>
+
+      <!-- Tracks Comparison -->
+      <div class="tracks-grid">
+        <div class="track-card">
+          <span class="track-tag" data-ar="المستوى الأول — للنتيجة الأقل في اختبار المستوى" data-en="Level 1 — For Lower Placement Score">
+            المستوى الأول — للنتيجة الأقل في اختبار المستوى
+          </span>
+          <h3>English (Grammar)</h3>
+          <p data-ar="يساعدك على إتقان القواعد الأساسية ويطوّر لغتك الإنجليزية المستخدمة في الحياة اليومية والمهنية؛ حيث يعلّمك الأزمنة (الماضي، المضارع، المستقبل)، وتركيب الجمل (فاعل، فعل، مفعول به)، والضمائر وغيرها."
+             data-en="Focuses on core English grammar used in daily and professional life, covering tenses (past, present, future), sentence structure (subject, verb, object), pronouns, and fundamentals.">
+            يساعدك على إتقان القواعد الأساسية ويطوّر لغتك الإنجليزية المستخدمة في الحياة اليومية والمهنية؛ حيث يعلّمك الأزمنة (الماضي، المضارع، المستقبل)، وتركيب الجمل (فاعل، فعل، مفعول به)، والضمائر وغيرها.
+          </p>
+        </div>
+
+        <div class="track-card">
+          <span class="track-tag" data-ar="المستوى الثاني — للنتيجة الأعلى في اختبار المستوى" data-en="Level 2 — For Higher Placement Score">
+            المستوى الثاني — للنتيجة الأعلى في اختبار المستوى
+          </span>
+          <h3>Life Skills</h3>
+          <p data-ar="يتناول الحياة المهنية والشخصية وكيفية الاستعداد لسوق العمل؛ حيث يعلّمك المهارات التي تبحث عنها الشركات، والتواصل الشفهي والكتابي، وإدارة الوقت وتنظيمه، وحل المشكلات بشكل منطقي، والعمل الجماعي وتوزيع المهام داخل الفريق."
+             data-en="Covers professional and personal life skills sought by employers, including verbal and written communication, time management, logical problem-solving, and teamwork.">
+            يتناول الحياة المهنية والشخصية وكيفية الاستعداد لسوق العمل؛ حيث يعلّمك المهارات التي تبحث عنها الشركات، والتواصل الشفهي والكتابي، وإدارة الوقت وتنظيمه، وحل المشكلات بشكل منطقي، والعمل الجماعي وتوزيع المهام داخل الفريق.
+          </p>
+        </div>
+      </div>
+
+      <!-- Attendance Warning -->
+      <div class="notice-warning">
+        <h4 data-ar="⚠️ نظام الساعات والإنذار والطرد (مهم جداً)" data-en="⚠️ Hours, Warning & Dismissal Policy (Crucial)">
+          ⚠️ نظام الساعات والإنذار والطرد (مهم جداً)
+        </h4>
+        <ul class="clean-list">
+          <li data-ar="بمجرد قبولك في البرنامج يستحيل طردك بسبب درجة الاختبار حتى لو كانت درجتك منخفضة أو سيئة؛ الطرد يكون بسبب الغياب وتجاوز الساعات المسموحة فقط."
+              data-en="Once accepted, you will never be dismissed due to test scores, no matter how low; dismissal occurs solely due to excessive absence hours.">
+            بمجرد قبولك في البرنامج يستحيل طردك بسبب درجة الاختبار حتى لو كانت درجتك منخفضة أو سيئة؛ الطرد يكون بسبب الغياب وتجاوز الساعات المسموحة فقط.
+          </li>
+          <li data-ar="يُحتسب الغياب بالساعات: عند الوصول إلى 10 ساعات غياب يصدر لك إنذار، وعند الوصول إلى 15 ساعة غياب يتم الطرد من البرنامج (كما أن الغياب الكبير يحرمك من المكافأة والشهادة، وأغلب المشرفين يحتسبون التأخر غياباً)."
+              data-en="Absences are tracked by hours: 10 hours trigger a warning, and 15 hours result in dismissal (and loss of stipend/certificate; tardiness is often counted as absence).">
+            يُحتسب الغياب بالساعات: عند الوصول إلى 10 ساعات غياب يصدر لك إنذار، وعند الوصول إلى 15 ساعة غياب يتم الطرد من البرنامج (كما أن الغياب الكبير يحرمك من المكافأة والشهادة، وأغلب المشرفين يحتسبون التأخر غياباً).
+          </li>
+          <li data-ar="تنبيه مهم: حد الـ 10 ساعات لا يمنحك الأحقية في الغياب ولا يعني استغلالها كفرصة لتفويت الحصص؛ فالحضور المستمر ضروري جداً لأن تفويت الحصص قد يضيّع عليك شروحات وتفاصيل مهمة كثيرة."
+              data-en="Important: The 10-hour warning threshold does not grant entitlement to skip classes; missing sessions can cause you to miss critical explanations and guidance.">
+            تنبيه مهم: حد الـ 10 ساعات لا يمنحك الأحقية في الغياب ولا يعني استغلالها كفرصة لتفويت الحصص؛ فالحضور المستمر ضروري جداً لأن تفويت الحصص قد يضيّع عليك شروحات وتفاصيل مهمة كثيرة.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Embedded Video: How to Join Classes -->
+      <div class="video-card">
+        <h3 data-ar="🎥 شرح طريقة الدخول على الحصص (فيديو مدمج)" data-en="🎥 How to Join Classes (Embedded Video Guide)">
+          🎥 شرح طريقة الدخول على الحصص (فيديو مدمج)
+        </h3>
+        <p style="color: var(--text-secondary);"
+           data-ar="يمكنك مشاهدة خطوات الدخول إلى الفصول الافتراضية مباشرة من هنا داخل الموقع:"
+           data-en="Watch the step-by-step guide to joining virtual classes directly inside the site:">
+          يمكنك مشاهدة خطوات الدخول إلى الفصول الافتراضية مباشرة من هنا داخل الموقع:
+        </p>
+        <div class="video-wrapper">
+          <video controls preload="metadata">
+            <source src="WhatsApp Video 2026-07-16 at 7.09.28 AM.mp4" type="video/mp4" />
+            متصفحك لا يدعم تشغيل الفيديو المدمج.
+          </video>
+        </div>
+      </div>
+
+      <!-- FAQs During Program -->
+      <div class="accordion-item">
+        <button class="accordion-header" type="button">
+          <span data-ar="آلية الحضور والغياب والتحضير الصارمة في البلاك بورد"
+                data-en="Strict Blackboard Attendance & Roll-Call Mechanism">
+            آلية الحضور والغياب والتحضير الصارمة في البلاك بورد
+          </span>
+          <span class="accordion-icon">+</span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <ul>
+              <li data-ar="نظام البلاك بورد دقيق جداً ويحسب الحضور والغياب بالساعة والدقيقة والثانية، كما يسجّل أي تنقل أو خروج من الفصل ودخولك مرة أخرى ويحسب دقائق الغياب تلقائياً."
+                  data-en="Blackboard tracks attendance by the exact hour, minute, and second, automatically logging any exit/re-entry during lectures.">
+                نظام البلاك بورد دقيق جداً ويحسب الحضور والغياب بالساعة والدقيقة والثانية، كما يسجّل أي تنقل أو خروج من الفصل ودخولك مرة أخرى ويحسب دقائق الغياب تلقائياً.
+              </li>
+              <li data-ar="التحضير مستمر طوال اليوم التدريبي (من 8 صباحاً حتى 12 ظهراً): يُرصد في بداية كل حصة، وبعد كل استراحة (بريك)، وعند نهاية الحصة أيضاً."
+                  data-en="Roll call is continuous (8:00 AM – 12:00 PM): at the start of every session, after every break, and at the end of class.">
+                التحضير مستمر طوال اليوم التدريبي (من 8 صباحاً حتى 12 ظهراً): يُرصد في بداية كل حصة، وبعد كل استراحة (بريك)، وعند نهاية الحصة أيضاً.
+              </li>
+              <li data-ar="يجب فتح المايك والتجاوب صوتياً فوراً عند مناداة اسمك؛ وفي حال عدم الرد يتم تسجيلك غائباً خلال تلك الفترة مباشرة."
+                  data-en="You must unmute your microphone and respond vocally immediately when called; otherwise, you are marked absent for that period.">
+                يجب فتح المايك والتجاوب صوتياً فوراً عند مناداة اسمك؛ وفي حال عدم الرد يتم تسجيلك غائباً خلال تلك الفترة مباشرة.
+              </li>
+              <li data-ar="في حال انقطاع الإنترنت أو الكهرباء فجأة: أعد الاتصال فوراً، وصوّر شاشة الخطأ مع إظهار وقت وتاريخ الجهاز، وأرسل الصورة للمشرف على الخاص مباشرة كإثبات."
+                  data-en="If internet or power cuts out suddenly: reconnect immediately, screenshot the error showing device date/time, and message your supervisor privately as proof.">
+                في حال انقطاع الإنترنت أو الكهرباء فجأة: أعد الاتصال فوراً، وصوّر شاشة الخطأ مع إظهار وقت وتاريخ الجهاز، وأرسل الصورة للمشرف على الخاص مباشرة كإثبات.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header" type="button">
+          <span data-ar="هل الاختبار إلزامي وهل يُعاد؟ وماذا عن الواجبات؟"
+                data-en="Are tests mandatory or retaken? What about homework?">
+            هل الاختبار إلزامي وهل يُعاد؟ وماذا عن الواجبات؟
+          </span>
+          <span class="accordion-icon">+</span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <ul>
+              <li data-ar="الاختبار إلزامي ويُعقد مرة واحدة فقط ولا يُعاد، والدرجة غير مهمة إطلاقاً؛ الأهم هو الحضور وحل الاختبار. وفي حال فواته لعذر، تتم مراجعة سجل حضورك ومشاركاتك."
+                  data-en="The test is mandatory, held once with no retakes, and the grade does not matter—attendance and completion do. If missed, attendance and participation records are reviewed.">
+                الاختبار إلزامي ويُعقد مرة واحدة فقط ولا يُعاد، والدرجة غير مهمة إطلاقاً؛ الأهم هو الحضور وحل الاختبار. وفي حال فواته لعذر، تتم مراجعة سجل حضورك ومشاركاتك.
+              </li>
+              <li data-ar="الواجبات إلزامية ويجب حلها، ولكنها غير صعبة ولا تتم المحاسبة على الأخطاء فيها، وتختلف حسب المسار والمدرب."
+                  data-en="Assignments are mandatory to submit, straightforward, and not penalized for mistakes; details vary by track and instructor.">
+                الواجبات إلزامية ويجب حلها، ولكنها غير صعبة ولا تتم المحاسبة على الأخطاء فيها، وتختلف حسب المسار والمدرب.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Steps to Assignments -->
+      <div class="card-box">
+        <h3 data-ar="📋 خطوات الدخول إلى قسم الواجبات في البلاك بورد" data-en="📋 Steps to Access Assignments on Blackboard">
+          📋 خطوات الدخول إلى قسم الواجبات في البلاك بورد
+        </h3>
+        <div class="steps-list">
+          <div class="step-item">
+            <span class="step-badge" data-ar="أولاً" data-en="Step 1">أولاً</span>
+            <span data-ar="افتح تطبيق أو منصة البلاك بورد (Blackboard)." data-en="Open the Blackboard app or web portal.">
+              افتح تطبيق أو منصة البلاك بورد (Blackboard).
+            </span>
+          </div>
+          <div class="step-item">
+            <span class="step-badge" data-ar="ثانياً" data-en="Step 2">ثانياً</span>
+            <span data-ar="افتح المقررات الدراسية أو (Courses)." data-en="Open the Courses section.">
+              افتح المقررات الدراسية أو (Courses).
+            </span>
+          </div>
+          <div class="step-item">
+            <span class="step-badge" data-ar="ثالثاً" data-en="Step 3">ثانياً</span>
+            <span data-ar="اضغط على أول خيار يظهر لك في القائمة (وهو المقرر الخاص ببرنامج أرامكو الصيفي)."
+                  data-en="Select the first course listed (your Summer Program course).">
+              اضغط على أول خيار يظهر لك في القائمة (وهو المقرر الخاص ببرنامج أرامكو الصيفي).
+            </span>
+          </div>
+          <div class="step-item">
+            <span class="step-badge" data-ar="رابعاً" data-en="Step 4">رابعاً</span>
+            <span data-ar="من القائمة الجانبية للمقرر، ابحث عن خيار (Assignments) واضغط عليه لرفع وحل كافة الواجبات المطلوبة."
+                  data-en="From the course sidebar, select Assignments to view and submit all required tasks.">
+              من القائمة الجانبية للمقرر، ابحث عن خيار (Assignments) واضغط عليه لرفع وحل كافة الواجبات المطلوبة.
+            </span>
+          </div>
+        </div>
+        <p style="margin-top: 14px; font-size: 0.92rem; color: var(--text-muted);"
+           data-ar="⚠️ ملاحظة هامة: في حال لم تظهر لك خانة (Assignments)، فهذا يعني أن المشرف لم يقم بإتاحتها وتفعيلها بعد، وستظهر فور وضعها من المشرف."
+           data-en="⚠️ Note: If Assignments is not visible yet, your instructor has not enabled it yet and it will appear once activated.">
+          ⚠️ ملاحظة هامة: في حال لم تظهر لك خانة (Assignments)، فهذا يعني أن المشرف لم يقم بإتاحتها وتفعيلها بعد، وستظهر فور وضعها من المشرف.
+        </p>
+      </div>
+    </section>
+
+    <!-- STAGE 3: END OF PROGRAM -->
+    <section id="stage-end" class="stage-section">
+      <div class="section-header">
+        <div class="section-num">3</div>
+        <h2 class="section-title" data-ar="نهاية البرنامج (العروض التقديمية، الشهادات، والمكافأة)" data-en="End of Program (Presentations, Certificates & Stipend)">
+          نهاية البرنامج (العروض التقديمية، الشهادات، والمكافأة)
+        </h2>
+      </div>
+
+      <!-- Presentations -->
+      <div class="accordion-item">
+        <button class="accordion-header" type="button">
+          <span data-ar="📢 تفاصيل ومتطلبات العرض التقديمي الختامي (Presentation)"
+                data-en="📢 Final Presentation Guidelines & Requirements">
+            📢 تفاصيل ومتطلبات العرض التقديمي الختامي (Presentation)
+          </span>
+          <span class="accordion-icon">+</span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <ul style="margin-bottom: 18px;">
+              <li data-ar="طبيعة التقديم: الأصل أن التقديم فردي (كل طالب يقدّم بمفرده)، وقد يطلب بعض المدربين العمل في مجموعات، لذا يُرجى التأكد من المدرب."
+                  data-en="Format: Presentations are individual by default, though some instructors may assign group presentations—confirm with your instructor.">
+                طبيعة التقديم: الأصل أن التقديم فردي (كل طالب يقدّم بمفرده)، وقد يطلب بعض المدربين العمل في مجموعات، لذا يُرجى التأكد من المدرب.
+              </li>
+              <li data-ar="الطابع والتصميم: يجب أن يكون الطابع العام رسمياً وخالياً من الرسومات والزخارف غير الضرورية، مع الاكتفاء برؤوس أقلام ونقاط رئيسية واضحة وشرحها شفوياً بثقة ضمن الوقت المحدد."
+                  data-en="Design & Tone: Keep slides formal without unnecessary graphics; use clear bullet points and explain details confidently within the allotted time.">
+                الطابع والتصميم: يجب أن يكون الطابع العام رسمياً وخالياً من الرسومات والزخارف غير الضرورية، مع الاكتفاء برؤوس أقلام ونقاط رئيسية واضحة وشرحها شفوياً بثقة ضمن الوقت المحدد.
+              </li>
+              <li data-ar="الكاميرا: للبنات ليس لزاماً فتح الكاميرا أثناء العرض، أما بالنسبة للأولاد فقد يطلب المشرف تشغيلها."
+                  data-en="Camera: Female students are not required to turn on their cameras; male students may be asked by their supervisor to turn theirs on.">
+                الكاميرا: للبنات ليس لزاماً فتح الكاميرا أثناء العرض، أما بالنسبة للأولاد فقد يطلب المشرف تشغيلها.
+              </li>
+              <li data-ar="عرض مسار English Grammar: المواضيع مفتوحة بعد استشارة الأستاذ، مثل التحدث عن رؤية المملكة 2030 أو المشاريع الوطنية الكبرى أو أي موضوع مناسب."
+                  data-en="English Grammar Track: Open topic (with instructor approval), such as Saudi Vision 2030, national mega-projects, or another suitable topic.">
+                عرض مسار English Grammar: المواضيع مفتوحة بعد استشارة الأستاذ، مثل التحدث عن رؤية المملكة 2030 أو المشاريع الوطنية الكبرى أو أي موضوع مناسب.
+              </li>
+            </ul>
+
+            <h4 style="margin-bottom: 12px; color: var(--text-main);"
+                data-ar="🔴 محاور عرض مسار Life Skills (إلزامية):"
+                data-en="🔴 Mandatory Sections for Life Skills Presentation:">
+              🔴 محاور عرض مسار Life Skills (إلزامية):
+            </h4>
+            <ol class="clean-list" style="margin-bottom: 16px;">
+              <li>التعريف عن نفسك: الاسم، المرحلة الدراسية، المدرسة، نمط شخصيتك، وعمرك.</li>
+              <li>شرح مبسط لمفهوم خارطة الطريق (Roadmap).</li>
+              <li>استعراض خارطة الرود ماب الأولية التي أعددتها في الأسبوع الأول وأهدافك المستقبلية.</li>
+              <li>استعراض خارطة الرود ماب النهائية (الأسبوع الأخير) ومقارنتها بالأولى مع شرح أسباب التغيير إن وجدت، أو توضيح عدم تغيرها.</li>
+              <li>الإجابة داخل الشرائح على الأسئلة الأربعة التالية:</li>
+            </ol>
+
+            <div class="q-pair">
+              <span class="q-ar">1- ما هي نقاط قوتك ونقاط ضعفك؟</span>
+              <span class="q-en">What are your strengths and weaknesses?</span>
+            </div>
+            <div class="q-pair">
+              <span class="q-ar">2- ماذا كنت تطمح أن تكون في طفولتك مقارنة بطموحك الآن؟ وهل هناك شخص أثّر في هذا الطموح؟</span>
+              <span class="q-en">What did you aspire to be when you were a child vs now? Was there someone who influenced this aspiration?</span>
+            </div>
+            <div class="q-pair">
+              <span class="q-ar">3- هل تعتقد أن هناك احتمالية لتغيير خارطة طريقك بعد المرحلة الجامعية؟</span>
+              <span class="q-en">Do you think there's a possibility that you'll change your roadmap after college?</span>
+            </div>
+            <div class="q-pair">
+              <span class="q-ar">4- هل تسبب هذا البرنامج الصيفي في تغيير طموحك؟ إذا كانت الإجابة بنعم، فكيف؟</span>
+              <span class="q-en">Has the program caused you to change your aspiration; if yes, how?</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificates & Stipend -->
+      <div class="accordion-item">
+        <button class="accordion-header" type="button">
+          <span data-ar="🎓 متى تصدر الشهادة وماذا تتضمن؟ ومتى تُصرف المكافأة؟"
+                data-en="🎓 When are certificates issued and when is the stipend paid?">
+            🎓 متى تصدر الشهادة وماذا تتضمن؟ ومتى تُصرف المكافأة؟
+          </span>
+          <span class="accordion-icon">+</span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <ul>
+              <li data-ar="الشهادة: تصدر خلال أسبوعين من نهاية البرنامج أو أقل، وتتضمن اسم الطالب الثلاثي وإفادة بإتمام البرنامج فقط (بدون درجات أو مسمى المسار)."
+                  data-en="Certificate: Issued within two weeks or less after the program ends, displaying only the student's full name and completion status (no grades or track names).">
+                الشهادة: تصدر خلال أسبوعين من نهاية البرنامج أو أقل، وتتضمن اسم الطالب الثلاثي وإفادة بإتمام البرنامج فقط (بدون درجات أو مسمى المسار).
+              </li>
+              <li data-ar="المكافأة المالية (1500 ريال): ليس لها وقت صرف محدد وثابت، ولكن غالباً تُصرف في شهر ديسمبر أو ممكن تنزل قبله (بعد نحو 3 أشهر من البرنامج)."
+                  data-en="Financial Stipend (1,500 SAR): Has no fixed payout date, though it is commonly disbursed around December or earlier (roughly 3 months post-program).">
+                المكافأة المالية (1500 ريال): ليس لها وقت صرف محدد وثابت، ولكن غالباً تُصرف في شهر ديسمبر أو ممكن تنزل قبله (بعد نحو 3 أشهر من البرنامج).
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- IBAN & All Banks Section -->
+      <div class="card-box">
+        <h3 data-ar="🏦 شهادة الآيبان (IBAN) وطريقة استخراجها لجميع البنوك"
+            data-en="🏦 IBAN Certificate Rules & Bank Extraction Guides">
+          🏦 شهادة الآيبان (IBAN) وطريقة استخراجها لجميع البنوك
+        </h3>
+
+        <div class="notice-danger" style="margin-top: 14px;">
+          <h4 data-ar="شروط وضوابط الآيبان (يُرجى قراءتها بعناية):" data-en="IBAN Rules & Conditions (Read Carefully):">
+            شروط وضوابط الآيبان (يُرجى قراءتها بعناية):
+          </h4>
+          <ul class="clean-list">
+            <li data-ar="موعد الطلب: لا يوجد موعد ثابت لطلب الآيبان؛ فقد يُطلب في بداية البرنامج أو منتصفه أو نهايته."
+                data-en="Submission Timing: There is no fixed date; IBAN may be requested at the start, middle, or end of the program.">
+              موعد الطلب: لا يوجد موعد ثابت لطلب الآيبان؛ فقد يُطلب في بداية البرنامج أو منتصفه أو نهايته.
+            </li>
+            <li data-ar="ملكية الحساب: يجب أن يكون الآيبان باسم الطالب نفسه؛ ولا يُقبل باسم الأم أو الأب أو أي شخص آخر إطلاقاً."
+                data-en="Account Ownership: The IBAN MUST be in the student's own name; parents' or third-party accounts are strictly rejected.">
+              ملكية الحساب: يجب أن يكون الآيبان باسم الطالب نفسه؛ ولا يُقبل باسم الأم أو الأب أو أي شخص آخر إطلاقاً.
+            </li>
+            <li data-ar="المحافظ الرقمية: البرنامج لا يقبل المحافظ الرقمية (مثل برق وغيرها)؛ يجب أن يكون حساباً بنكياً رسمياً."
+                data-en="Digital Wallets: Digital wallets (such as Barq, etc.) are not accepted; an official bank account is required.">
+              المحافظ الرقمية: البرنامج لا يقبل المحافظ الرقمية (مثل برق وغيرها)؛ يجب أن يكون حساباً بنكياً رسمياً.
+            </li>
+            <li data-ar="التعديل عند الخطأ: احرص على أن تكون جميع معلوماتك صحيحة؛ وفي حال حدوث خطأ غير مقصود في الآيبان، تُمنح مهلة للتعديل لمرة واحدة فقط لتصحيح البيانات واعتمادها."
+                data-en="Correction Window: Ensure all details are accurate; if an unintentional mistake occurs, a one-time edit window is provided to correct it.">
+              التعديل عند الخطأ: احرص على أن تكون جميع معلوماتك صحيحة؛ وفي حال حدوث خطأ غير مقصود في الآيبان، تُمنح مهلة للتعديل لمرة واحدة فقط لتصحيح البيانات واعتمادها.
+            </li>
+          </ul>
+        </div>
+
+        <p style="color: var(--text-secondary); margin-bottom: 10px;"
+           data-ar="اختر بنكك من القائمة التالية لعرض فيديو الشرح وخطوات استخراج شهادة الآيبان مباشرة داخل الموقع (ملاحظة: بعض البنوك تسميها شهادة آيبان، وبعضها خطاب آيبان أو شهادة بيانات الحساب، وجميعها تؤدي نفس الغرض):"
+           data-en="Select your bank below to watch the video guide and view IBAN certificate steps directly inside this website (Note: banks may call it IBAN Certificate, IBAN Letter, or Account Details Certificate):">
+          اختر بنكك من القائمة التالية لعرض فيديو الشرح وخطوات استخراج شهادة الآيبان مباشرة داخل الموقع (ملاحظة: بعض البنوك تسميها شهادة آيبان، وبعضها خطاب آيبان أو شهادة بيانات الحساب، وجميعها تؤدي نفس الغرض):
+        </p>
+
+        <div class="banks-grid" id="banksGrid"></div>
+      </div>
+    </section>
+
+    <!-- Community & Support Section -->
+    <section class="community-card">
+      <p data-ar="هل لديك أي استفسارات أو ترغب في التقديم على إشراف المجموعة؟ يمكنك التواصل معنا عبر البوت المخصص."
+         data-en="Do you have any inquiries or wish to apply for group moderation? You can reach us via our dedicated bot.">
+        هل لديك أي استفسارات أو ترغب في التقديم على إشراف المجموعة؟ يمكنك التواصل معنا عبر البوت المخصص.
+      </p>
+      <div class="community-buttons">
+        <a href="https://t.me/arthelping_bot" target="_blank" rel="noopener noreferrer" class="tg-btn tg-btn-primary">
+          <span>🤖</span>
+          <span data-ar="بوت التواصل والإشراف (@arthelping_bot)" data-en="Support & Moderation Bot (@arthelping_bot)">
+            بوت التواصل والإشراف (@arthelping_bot)
+          </span>
+        </a>
+        <a href="https://t.me/GAAT2025" target="_blank" rel="noopener noreferrer" class="tg-btn tg-btn-outline">
+          <span>💬</span>
+          <span data-ar="قروب التدريب الصيفي (@GAAT2025)" data-en="Summer Training Group (@GAAT2025)">
+            قروب التدريب الصيفي (@GAAT2025)
+          </span>
+        </a>
+        <a href="https://t.me/Aramco28" target="_blank" rel="noopener noreferrer" class="tg-btn tg-btn-outline">
+          <span>📢</span>
+          <span data-ar="القناة الرسمية (@Aramco28)" data-en="Official Channel (@Aramco28)">
+            القناة الرسمية (@Aramco28)
+          </span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p data-ar="مبادرة طلابية تطوعية مستقلة ولا تمت بأي صلة لشركة أرامكو السعودية."
+         data-en="An independent voluntary student initiative with no affiliation to Saudi Aramco.">
+        مبادرة طلابية تطوعية مستقلة ولا تمت بأي صلة لشركة أرامكو السعودية.
+      </p>
+      <p class="copyright" data-ar="جميع الحقوق محفوظة © 2026" data-en="All Rights Reserved © 2026">
+        جميع الحقوق محفوظة © 2026
+      </p>
+    </div>
+  </footer>
+
+  <!-- In-Site Bank Video & Guide Modal -->
+  <div class="modal-overlay" id="bankModal" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modalBankTitle" style="font-size: 1.05rem;">شرح استخراج شهادة الآيبان</h3>
+        <button class="modal-close" id="closeModal" type="button" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-iframe-wrap">
+          <iframe
+            id="modalYtIframe"
+            src=""
+            title="IBAN Certificate Video Guide"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="modal-steps" id="modalBankSteps"></div>
+        <div class="modal-actions">
+          <span id="modalBankNote" style="font-size: 0.85rem; color: var(--text-muted);"></span>
+          <a id="modalYtLink" href="#" target="_blank" rel="noopener noreferrer" class="modal-yt-btn">
+            <span>▶</span>
+            <span id="modalYtLabel">فتح الفيديو في يوتيوب</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 1. Countdown Timer to Feb 28, 2027
+    const targetDate = new Date("2027-02-28T00:00:00+03:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = Math.max(0, targetDate - now);
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("cd-days").textContent = String(days).padStart(2, "0");
+      document.getElementById("cd-hours").textContent = String(hours).padStart(2, "0");
+      document.getElementById("cd-minutes").textContent = String(minutes).padStart(2, "0");
+      document.getElementById("cd-seconds").textContent = String(seconds).padStart(2, "0");
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // 2. Accordion Logic
+    document.querySelectorAll(".accordion-header").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const item = btn.parentElement;
+        const body = item.querySelector(".accordion-body");
+        const isOpen = item.classList.contains("open");
+
+        if (isOpen) {
+          body.style.maxHeight = null;
+          item.classList.remove("open");
+        } else {
+          item.classList.add("open");
+          body.style.maxHeight = body.scrollHeight + "px";
+        }
+      });
+    });
+
+    // 3. Banks Data with Direct Embedded YouTube Videos
+    const banks = [
+      {
+        ar: "مصرف الراجحي",
+        en: "Al Rajhi Bank",
+        videoId: "zdin21AIb5g",
+        stepsAr: "افتح تطبيق الراجحي ← اختر الحساب الجاري ← المزيد من الخيارات ← طباعة شهادة الآيبان (PDF).",
+        stepsEn: "Open Al Rajhi App → Select Current Account → More Options → Print IBAN Certificate (PDF)."
+      },
+      {
+        ar: "البنك الأهلي (SNB)",
+        en: "Saudi National Bank (SNB)",
+        videoId: "lnKINxJr0zA",
+        stepsAr: "افتح تطبيق الأهلي موبايل ← الحسابات ← إدارة الحساب ← إصدار شهادة آيبان.",
+        stepsEn: "Open SNB Mobile → Accounts → Account Management → Issue IBAN Certificate."
+      },
+      {
+        ar: "مصرف الإنماء",
+        en: "Alinma Bank",
+        videoId: "5xvGG5ILRbg",
+        stepsAr: "افتح تطبيق الإنماء ← اختر الحساب ← تفاصيل الحساب ← مشاركة / طباعة خطاب الآيبان.",
+        stepsEn: "Open Alinma App → Select Account → Account Details → Share/Print IBAN Letter."
+      },
+      {
+        ar: "بنك الرياض",
+        en: "Riyad Bank",
+        videoId: "219n_ejilO4",
+        stepsAr: "افتح تطبيق بنك الرياض ← الحسابات ← تفاصيل الحساب ← شهادة الآيبان.",
+        stepsEn: "Open Riyad Mobile → Accounts → Account Details → IBAN Certificate."
+      },
+      {
+        ar: "بنك البلاد",
+        en: "Bank Albilad",
+        videoId: "aB0-BDlsg-c",
+        stepsAr: "افتح تطبيق البلاد ← اختر الحساب ← خيارات الحساب ← إصدار شهادة بيانات الحساب / الآيبان.",
+        stepsEn: "Open Albilad App → Select Account → Account Options → Issue Account/IBAN Certificate."
+      },
+      {
+        ar: "بنك الجزيرة",
+        en: "Bank AlJazira",
+        videoId: "2Qz1POg5O8E",
+        stepsAr: "افتح تطبيق الجزيرة سمارت ← الحسابات ← تفاصيل الحساب ← تحميل شهادة الآيبان.",
+        stepsEn: "Open AlJazira Smart → Accounts → Account Details → Download IBAN Certificate."
+      },
+      {
+        ar: "البنك العربي الوطني (anb)",
+        en: "Arab National Bank (anb)",
+        videoId: "7RuGBGzSX78",
+        stepsAr: "افتح تطبيق anb ← الحسابات ← إدارة الحساب ← إصدار خطاب الآيبان.",
+        stepsEn: "Open anb App → Accounts → Account Management → Issue IBAN Letter."
+      },
+      {
+        ar: "البنك السعودي الفرنسي (BSF)",
+        en: "Banque Saudi Fransi (BSF)",
+        videoId: "U_vXMpB2hcg",
+        stepsAr: "افتح تطبيق فرنسي موبايل ← اختر الحساب ← المستندات والشهادات ← شهادة الآيبان.",
+        stepsEn: "Open Fransi Mobile → Select Account → Documents & Certificates → IBAN Certificate."
+      },
+      {
+        ar: "البنك الأول (SAB)",
+        en: "Saudi Awwal Bank (SAB)",
+        videoId: "oXl4toY21oQ",
+        stepsAr: "افتح تطبيق SAB Mobile ← الحسابات ← تفاصيل الحساب ← تحميل خطاب الآيبان.",
+        stepsEn: "Open SAB Mobile → Accounts → Account Details → Download IBAN Letter."
+      },
+      {
+        ar: "البنك السعودي للاستثمار",
+        en: "Saudi Investment Bank (SAIB)",
+        videoId: "XLxSOi9Q4uo",
+        stepsAr: "افتح تطبيق البنك السعودي للاستثمار ← الحسابات ← الخدمات الإلكترونية ← شهادة الآيبان.",
+        stepsEn: "Open SAIB App → Accounts → E-Services → IBAN Certificate."
+      },
+      {
+        ar: "STC Bank",
+        en: "STC Bank",
+        videoId: "vlNelRVlO4Y",
+        stepsAr: "افتح تطبيق STC Bank ← الحسابات ← تفاصيل الحساب ← مشاركة شهادة الآيبان الرسمية.",
+        stepsEn: "Open STC Bank App → Accounts → Account Details → Share Official IBAN Certificate."
+      }
+    ];
+
+    let currentLang = "ar";
+    const banksGrid = document.getElementById("banksGrid");
+    const bankModal = document.getElementById("bankModal");
+    const modalBankTitle = document.getElementById("modalBankTitle");
+    const modalYtIframe = document.getElementById("modalYtIframe");
+    const modalBankSteps = document.getElementById("modalBankSteps");
+    const modalBankNote = document.getElementById("modalBankNote");
+    const modalYtLink = document.getElementById("modalYtLink");
+    const modalYtLabel = document.getElementById("modalYtLabel");
+
+    function renderBanks() {
+      banksGrid.innerHTML = "";
+      banks.forEach((bank) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "bank-btn";
+        btn.innerHTML = `<span>${currentLang === "ar" ? bank.ar : bank.en}</span><span>▶</span>`;
+        btn.addEventListener("click", () => openBankModal(bank));
+        banksGrid.appendChild(btn);
+      });
+    }
+
+    function openBankModal(bank) {
+      modalBankTitle.textContent =
+        currentLang === "ar"
+          ? `شرح استخراج شهادة الآيبان — ${bank.ar}`
+          : `IBAN Certificate Guide — ${bank.en}`;
+      modalYtIframe.src = `https://www.youtube.com/embed/${bank.videoId}?rel=0`;
+      modalBankSteps.textContent = currentLang === "ar" ? bank.stepsAr : bank.stepsEn;
+      modalBankNote.textContent =
+        currentLang === "ar"
+          ? "قد يختلف مسمى الخيار قليلاً بين (شهادة آيبان / خطاب آيبان / شهادة بيانات الحساب)."
+          : "Label may appear as IBAN Certificate, IBAN Letter, or Account Details Certificate.";
+      modalYtLabel.textContent =
+        currentLang === "ar"
+          ? "فتح الفيديو في يوتيوب"
+          : "Open Video on YouTube";
+      modalYtLink.href = `https://www.youtube.com/watch?v=${bank.videoId}`;
+      bankModal.classList.add("active");
+    }
+
+    function closeBankModal() {
+      bankModal.classList.remove("active");
+      modalYtIframe.src = "";
+    }
+
+    document.getElementById("closeModal").addEventListener("click", closeBankModal);
+    bankModal.addEventListener("click", (e) => {
+      if (e.target === bankModal) closeBankModal();
+    });
+
+    // 4. Theme Toggle (Light / Dark)
+    const themeToggle = document.getElementById("themeToggle");
+    const themeIcon = document.getElementById("themeIcon");
+    const themeLabel = document.getElementById("themeLabel");
+
+    function updateThemeUI() {
+      const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+      themeIcon.textContent = isDark ? "☀️" : "🌙";
+      if (currentLang === "ar") {
+        themeLabel.textContent = isDark ? "الوضع الفاتح" : "الوضع الداكن";
+      } else {
+        themeLabel.textContent = isDark ? "Light Mode" : "Dark Mode";
+      }
+    }
+
+    themeToggle.addEventListener("click", () => {
+      const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+      document.documentElement.setAttribute("data-theme", isDark ? "light" : "dark");
+      updateThemeUI();
+    });
+
+    // 5. Language Toggle (AR / EN)
+    const langToggle = document.getElementById("langToggle");
+    const langLabel = document.getElementById("langLabel");
+    const brandMain = document.getElementById("brandMain");
+    const brandSub = document.getElementById("brandSub");
+
+    langToggle.addEventListener("click", () => {
+      currentLang = currentLang === "ar" ? "en" : "ar";
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
+      langLabel.textContent = currentLang === "ar" ? "English" : "العربية";
+
+      if (currentLang === "ar") {
+        brandMain.textContent = "دليل برنامج التدريب الصيفي";
+        brandSub.textContent = "Summer Training Program Guide";
+      } else {
+        brandMain.textContent = "Summer Training Program Guide";
+        brandSub.textContent = "دليل برنامج التدريب الصيفي";
+      }
+
+      document.querySelectorAll("[data-ar]").forEach((el) => {
+        el.textContent = el.getAttribute(`data-${currentLang}`);
+      });
+
+      document.querySelectorAll(".accordion-item.open .accordion-body").forEach((body) => {
+        body.style.maxHeight = body.scrollHeight + "px";
+      });
+
+      updateThemeUI();
+      renderBanks();
+    });
+
+    // Initial render
+    renderBanks();
+  </script>
+</body>
+</html>
